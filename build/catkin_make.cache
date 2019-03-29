@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/panda/Documents/Felix/PandaRepo/PandaTrasforms/devel -DCMAKE_INSTALL_PREFIX=/home/panda/Documents/Felix/PandaRepo/PandaTrasforms/install -G Unix Makefiles

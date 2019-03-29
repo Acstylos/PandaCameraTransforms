@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/panda/Documents/Felix/PandaRepo/PandaTrasforms/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_947dc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_947dc.dir/build.make CMakeFiles/cmTC_947dc.dir/build
+make[1]: Entering directory '/home/panda/Documents/Felix/PandaRepo/PandaTrasforms/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_947dc.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_947dc.dir/CheckSymbolExists.c.o   -c /home/panda/Documents/Felix/PandaRepo/PandaTrasforms/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_947dc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_947dc.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_947dc.dir/CheckSymbolExists.c.o  -o cmTC_947dc -rdynamic 
+CMakeFiles/cmTC_947dc.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_947dc.dir/build.make:97: recipe for target 'cmTC_947dc' failed
+make[1]: *** [cmTC_947dc] Error 1
+make[1]: Leaving directory '/home/panda/Documents/Felix/PandaRepo/PandaTrasforms/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_947dc/fast' failed
+make: *** [cmTC_947dc/fast] Error 2
+
+File /home/panda/Documents/Felix/PandaRepo/PandaTrasforms/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/panda/Documents/Felix/PandaRepo/PandaTrasforms/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_842bd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_842bd.dir/build.make CMakeFiles/cmTC_842bd.dir/build
+make[1]: Entering directory '/home/panda/Documents/Felix/PandaRepo/PandaTrasforms/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_842bd.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_842bd.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_842bd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_842bd.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_842bd.dir/CheckFunctionExists.c.o  -o cmTC_842bd -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_842bd.dir/build.make:97: recipe for target 'cmTC_842bd' failed
+make[1]: *** [cmTC_842bd] Error 1
+make[1]: Leaving directory '/home/panda/Documents/Felix/PandaRepo/PandaTrasforms/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_842bd/fast' failed
+make: *** [cmTC_842bd/fast] Error 2
+
+
