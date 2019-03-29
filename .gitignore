@@ -5,6 +5,7 @@
 devel/
 logs/
 build/
+install/
 bin/
 lib/
 msg_gen/
@@ -55,3 +56,5 @@ qtcreator-*
 CATKIN_IGNORE
 
 # End of https://www.gitignore.io/api/ros
+
+.vscode/
