@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find image_to_transform)/launch/image_to_transform.launch" />
+    <include file="$(find franka_gazebo)/launch/franka.launch" />
+</launch>
