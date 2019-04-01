@@ -1,0 +1,5 @@
+<launch>
+    <group ns="image_to_transform">
+        <node name="image_listener" pkg="image_to_transform" type="image_to_transform_node"/>
+    </group>
+</launch>
