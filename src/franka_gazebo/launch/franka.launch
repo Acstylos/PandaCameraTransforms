@@ -3,5 +3,7 @@
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find franka_gazebo)/worlds/franka.world"/>
     <!-- more default parameters can be changed here -->
+    <arg name="paused" value="true"/>
   </include>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file /home/panda/Documents/Felix/PandaTrasforms/src/franka_description/urdf/panda_arm.urdf -urdf -model panda" />
 </launch>
