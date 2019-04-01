@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
-  <world name="default">
+  <world name="panda_land">
     <include>
       <uri>model://ground_plane</uri>
     </include>
@@ -12,8 +12,66 @@
       <pose>1 0 -0.5 0 0 1.570796</pose>
     </include>
     <include>
-      <uri>model://camera</uri>
-      <pose>3 1 1.5 0 0.35 3.591591</pose>
+      <uri>model://aruco_visual_marker_7</uri>
+      <pose>0.900935 -0.045913 0.521198 0 0 0</pose>
     </include>
+    <model name='panda_ros_camera'>
+      <link name='link'>
+        <gravity>0</gravity>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+        </visual>
+        <sensor name='camera' type='camera'>
+          <update_rate>1</update_rate>
+          <always_on>1</always_on>
+          <visualize>1</visualize>
+          <camera name='head'>
+            <horizontal_fov>1.047</horizontal_fov>
+            <save enabled="false">
+              <path>~/Documents/Felix/PandaTrasforms/Images</path>
+            </save>
+            <image>
+              <width>1920</width>
+              <height>1080</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>20</far>
+            </clip>
+          </camera>
+          <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>0.0</updateRate>
+            <cameraName>panda_camera</cameraName>
+            <imageTopicName>images</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+            <frameName>camera_frame</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+          </plugin>
+        </sensor>
+      </link>
+      <pose>3 1 1.5 0 0.35 3.591591</pose>
+    </model>
   </world>
 </sdf>

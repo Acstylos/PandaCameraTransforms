@@ -83,9 +83,9 @@
       </geometry>
     </collision>
     <inertial>
-            <mass value="5" />
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <inertia ixx="0.004" ixy="0.001" ixz="0" iyy="0.006" iyz="0" izz="0.007" />
+      <mass value="5" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="0.004" ixy="0.001" ixz="0" iyy="0.006" iyz="0" izz="0.007" />
     </inertial>
   </link>
   <joint name="panda_joint3" type="revolute">
