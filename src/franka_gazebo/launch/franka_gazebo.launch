@@ -1,0 +1,11 @@
+<launch>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find franka_gazebo)/worlds/franka.world"/>
+    <!-- more default parameters can be changed here -->
+    <arg name="paused" value="false"/>
+  </include>
+  <param name="robot_description" command="cat $(find franka_description)/urdf/panda_arm_hand_custom.urdf" />
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file /home/panda/Documents/Felix/PandaTrasforms/src/franka_description/urdf/panda_arm_hand_custom.urdf -urdf -z 1 -model panda" />
+  <!--<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(robot_description) -urdf -z 1 -model panda" />-->
+</launch>
