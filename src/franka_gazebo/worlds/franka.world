@@ -15,6 +15,10 @@
       <uri>model://aruco_visual_marker_7</uri>
       <pose>0.900935 -0.045913 1.05 0 0 0</pose>
     </include>
+    <!--<include>
+      <uri>model://charuco_visual_marker</uri>
+      <pose>1.75 0.3 1.85 0.7 0.7 0.7</pose>
+    </include>-->
     <model name='panda_ros_camera'>
       <link name='link'>
         <gravity>0</gravity>
