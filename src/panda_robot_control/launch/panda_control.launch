@@ -1,4 +1,7 @@
 <launch>
+  <group ns="panda_robot_control">
+        <node name="robot_mover" pkg="panda_robot_control" type="panda_robot_control_node"/>
+    </group>
 
   <!-- Load joint controller configurations from YAML file to parameter server -->
   <rosparam file="$(find panda_robot_control)/config/panda_control.yaml" command="load"/>
@@ -12,7 +15,5 @@
     <remap from="/joint_states" to="/panda/joint_states" />
   </node>
 
-  <group ns="robot_mover">
-        <node name="robot_mover" pkg="panda_robot_control" type="robot_mover"/>
-    </group>
+
 </launch>
