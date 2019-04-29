@@ -2,4 +2,5 @@
     <include file="$(find image_to_transform)/launch/image_to_transform.launch" />
     <include file="$(find franka_gazebo)/launch/franka_gazebo.launch" />
     <include file="$(find panda_robot_control)/launch/panda_control.launch" />
+    <!--<include file="$(find panda_moveit_config)/launch/chomp_demo.launch" />-->
 </launch>
