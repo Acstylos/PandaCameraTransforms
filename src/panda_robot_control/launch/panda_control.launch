@@ -11,4 +11,8 @@
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
     <remap from="/joint_states" to="/panda/joint_states" />
   </node>
+
+  <group ns="robot_mover">
+        <node name="robot_mover" pkg="panda_robot_control" type="robot_mover"/>
+    </group>
 </launch>
